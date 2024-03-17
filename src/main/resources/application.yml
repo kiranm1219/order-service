@@ -19,7 +19,7 @@ spring:
       bootstrap-servers: 127.0.0.1:9092
       group-id: orders_group
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
   #  config:
   #    import: configserver:http://localhost:9296
   h2:

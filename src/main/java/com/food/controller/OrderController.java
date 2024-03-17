@@ -1,6 +1,7 @@
 package com.food.controller;
 
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.food.model.Order;
 import com.food.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ public class OrderController {
 
 
     @PostMapping("/orders")
-    public ResponseEntity<Order> createOrder(@RequestBody Order order) {
+    public ResponseEntity<Order> createOrder(@RequestBody Order order) throws JsonProcessingException {
         orderService.createOrder(order);
         return ResponseEntity.ok(order);
     }
